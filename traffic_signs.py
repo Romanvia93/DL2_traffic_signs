@@ -3,6 +3,9 @@ import subprocess
 import os
 from PIL import Image
 
+# Get the absolute path of the script's directory
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def text_block():
     st.title("Road Sign Detection App")
     st.markdown("### This app detects 4 distinct classes of road signs:")
@@ -11,6 +14,7 @@ def text_block():
     st.markdown("- Speed Limit Sign")
     st.markdown("- Crosswalk Sign")
 
+@st.cache(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True)
 def load_local_image(image_path):
     """
     Load an image from the local file system.
@@ -32,19 +36,19 @@ def predict(uploaded, image_placeholder):
     This function classifies the image and shows the result in Streamlit.
     """
     command = [
-        "python", "./yolov5/detect.py",
-        "--weights", "./yolov5/runs/train/exp/weights/best.pt",
+        "python", os.path.join(SCRIPT_DIR, "yolov5/detect.py"),
+        "--weights", os.path.join(SCRIPT_DIR, "yolov5/runs/train/exp/weights/best.pt"),
         "--img", "640",
         "--conf", "0.4",
         "--iou-thres", "0.45",
-        "--source", "./uploaded_images/image_to_predict.png",
+        "--source", os.path.join(SCRIPT_DIR, "uploaded_images/image_to_predict.png"),
         "--save-txt",
         "--save-conf"
     ]
     if uploaded:
         st.image(uploaded, caption="Original Image")
         subprocess.run(command)
-        image_path = "./yolov5/runs/detect/exp/image_to_predict.png"
+        image_path = os.path.join(SCRIPT_DIR, "yolov5/runs/detect/exp/image_to_predict.png")
         image = load_local_image(image_path)
         if image is not None:
             # Display the image using Streamlit
@@ -53,7 +57,6 @@ def predict(uploaded, image_placeholder):
             st.error("Failed to load the image from the local repository.")
     else:
         st.error("No image has been uploaded")
-
 
 def save_uploaded_image(uploaded):
     """
@@ -72,7 +75,7 @@ def save_uploaded_image(uploaded):
     """
 
     # Specify the directory where you want to save the image
-    save_dir = "uploaded_images"
+    save_dir = os.path.join(SCRIPT_DIR, "uploaded_images")
     
     # Create the directory if it doesn't exist
     if not os.path.exists(save_dir):
