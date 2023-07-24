@@ -41,7 +41,7 @@ def predict(uploaded, image_placeholder):
         "--img", "640",
         "--conf", "0.4",
         "--iou-thres", "0.45",
-        "--source", os.path.join(SCRIPT_DIR, "uploaded_images/image_to_predict.png"),
+        "--source", os.path.join(SCRIPT_DIR, "./uploaded_images/image_to_predict.png"),
         "--save-txt",
         "--save-conf"
     ]
