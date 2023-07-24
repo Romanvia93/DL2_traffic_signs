@@ -36,19 +36,19 @@ def predict(uploaded, image_placeholder):
     This function classifies the image and shows the result in Streamlit.
     """
     command = [
-        "python", "./yolov5/detect.py",
-        "--weights", "./yolov5/runs/train/exp/weights/best.pt",
+        "python", "yolov5/detect.py",
+        "--weights", "yolov5/runs/train/exp/weights/best.pt",
         "--img", "640",
         "--conf", "0.4",
         "--iou-thres", "0.45",
-        "--source", "./uploaded_images/image_to_predict.png",
+        "--source", "uploaded_images/image_to_predict.png",
         "--save-txt",
         "--save-conf"
     ]
     if uploaded:
         st.image(uploaded, caption="Original Image")
         subprocess.run(command)
-        image_path = "./yolov5/runs/detect/exp/image_to_predict.png"
+        image_path = "yolov5/runs/detect/exp/image_to_predict.png"
         image = load_local_image(image_path)
         if image is not None:
             # Display the image using Streamlit
@@ -75,7 +75,7 @@ def save_uploaded_image(uploaded):
     """
 
     # Specify the directory where you want to save the image
-    save_dir = "./uploaded_images"
+    save_dir = "uploaded_images"
     
     # Create the directory if it doesn't exist
     if not os.path.exists(save_dir):
