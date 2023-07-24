@@ -4,7 +4,9 @@ import os
 from PIL import Image
 
 # Get the absolute path of the script's directory
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+path = os.path.dirname(__file__)
+# my_file = path+'/photo.png'
 
 def text_block():
     st.title("Road Sign Detection App")
@@ -37,12 +39,12 @@ def predict(uploaded, image_placeholder):
     """
     # Update the command to use the correct relative path to detect.py and model weights
     command = [
-        "python", os.path.join(SCRIPT_DIR, "yolov5/detect.py"),
-        "--weights", os.path.join(SCRIPT_DIR, "yolov5/runs/train/exp/weights/best.pt"),
+        "python", os.path.join(path, "yolov5/detect.py"),
+        "--weights", os.path.join(path, "yolov5/runs/train/exp/weights/best.pt"),
         "--img", "640",
         "--conf", "0.4",
         "--iou-thres", "0.45",
-        "--source", os.path.join(SCRIPT_DIR, "uploaded_images/image_to_predict.png"),
+        "--source", os.path.join(path, "uploaded_images/image_to_predict.png"),
         "--save-txt",
         "--save-conf"
     ]
@@ -58,7 +60,7 @@ def predict(uploaded, image_placeholder):
         except subprocess.CalledProcessError as e:
             st.error(f"Error running the detect.py script: {e}")
 
-        image_path = os.path.join(SCRIPT_DIR, "yolov5/runs/detect/exp/image_to_predict.png")
+        image_path = os.path.join(path, "yolov5/runs/detect/exp/image_to_predict.png")
 
         # Print the image path for debugging
         print("Image Path:", image_path)
