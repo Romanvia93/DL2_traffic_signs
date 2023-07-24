@@ -14,7 +14,7 @@ def text_block():
     st.markdown("- Speed Limit Sign")
     st.markdown("- Crosswalk Sign")
 
-@st.cache(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True)
+@st.cache_data(show_spinner=False, suppress_st_warning=True, allow_output_mutation=True)
 def load_local_image(image_path):
     """
     Load an image from the local file system.
@@ -102,3 +102,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+# https://dl2trafficsigns-yggakjlmx2.streamlit.app/
