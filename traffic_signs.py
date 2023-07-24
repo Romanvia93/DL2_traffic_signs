@@ -36,8 +36,8 @@ def predict(uploaded, image_placeholder):
     This function classifies the image and shows the result in Streamlit.
     """
     command = [
-        "python", os.path.join(SCRIPT_DIR, "yolov5/detect.py"),
-        "--weights", os.path.join(SCRIPT_DIR, "yolov5/runs/train/exp/weights/best.pt"),
+        "python", os.path.join(SCRIPT_DIR, "./yolov5/detect.py"),
+        "--weights", os.path.join(SCRIPT_DIR, "./yolov5/runs/train/exp/weights/best.pt"),
         "--img", "640",
         "--conf", "0.4",
         "--iou-thres", "0.45",
@@ -48,7 +48,7 @@ def predict(uploaded, image_placeholder):
     if uploaded:
         st.image(uploaded, caption="Original Image")
         subprocess.run(command)
-        image_path = os.path.join(SCRIPT_DIR, "yolov5/runs/detect/exp/image_to_predict.png")
+        image_path = os.path.join(SCRIPT_DIR, "./yolov5/runs/detect/exp/image_to_predict.png")
         image = load_local_image(image_path)
         if image is not None:
             # Display the image using Streamlit
