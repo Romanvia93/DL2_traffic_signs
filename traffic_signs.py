@@ -6,6 +6,7 @@ from PIL import Image
 # Get the absolute path of the script's directory
 # SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 path = os.path.dirname(__file__)
+print(os.listdir(path))
 # my_file = path+'/photo.png'
 
 def text_block():
