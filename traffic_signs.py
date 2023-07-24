@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 # Get the absolute path of the script's directory
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def text_block():
     st.title("Road Sign Detection App")
@@ -36,19 +36,19 @@ def predict(uploaded, image_placeholder):
     This function classifies the image and shows the result in Streamlit.
     """
     command = [
-        "python", os.path.join(SCRIPT_DIR, "yolov5/detect.py"),
-        "--weights", os.path.join(SCRIPT_DIR, "./yolov5/runs/train/exp/weights/best.pt"),
+        "python", "./yolov5/detect.py",
+        "--weights", "./yolov5/runs/train/exp/weights/best.pt",
         "--img", "640",
         "--conf", "0.4",
         "--iou-thres", "0.45",
-        "--source", os.path.join(SCRIPT_DIR, "./uploaded_images/image_to_predict.png"),
+        "--source", "./uploaded_images/image_to_predict.png",
         "--save-txt",
         "--save-conf"
     ]
     if uploaded:
         st.image(uploaded, caption="Original Image")
         subprocess.run(command)
-        image_path = os.path.join(SCRIPT_DIR, "./yolov5/runs/detect/exp/image_to_predict.png")
+        image_path = "./yolov5/runs/detect/exp/image_to_predict.png"
         image = load_local_image(image_path)
         if image is not None:
             # Display the image using Streamlit
@@ -75,7 +75,7 @@ def save_uploaded_image(uploaded):
     """
 
     # Specify the directory where you want to save the image
-    save_dir = os.path.join(SCRIPT_DIR, "uploaded_images")
+    save_dir = "./uploaded_images"
     
     # Create the directory if it doesn't exist
     if not os.path.exists(save_dir):
