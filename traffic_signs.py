@@ -2,11 +2,12 @@ import streamlit as st
 import subprocess
 import os
 from PIL import Image
+from pathlib import Path
 
 # Get the absolute path of the script's directory
 # SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-path = os.path.dirname(__file__)
-print(os.listdir(path))
+path = Path(__file__).parents[0]
+# print(os.listdir(path))
 # my_file = path+'/photo.png'
 
 def text_block():
