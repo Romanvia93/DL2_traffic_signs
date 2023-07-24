@@ -36,7 +36,7 @@ def predict(uploaded, image_placeholder):
     This function classifies the image and shows the result in Streamlit.
     """
     command = [
-        "python", os.path.join(SCRIPT_DIR, "./yolov5/detect.py"),
+        "python", os.path.join(SCRIPT_DIR, "yolov5/detect.py"),
         "--weights", os.path.join(SCRIPT_DIR, "./yolov5/runs/train/exp/weights/best.pt"),
         "--img", "640",
         "--conf", "0.4",
