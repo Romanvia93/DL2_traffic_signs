@@ -60,8 +60,8 @@ streamlit run app.py
 
 The app will be accessible in your browser at `http://localhost:8501`.
 
-## Deployed Version
+## App view
 
-The app is also deployed and can be accessed at: [Road Sign Detection App](https://dl2trafficsigns-yggakjlmx2.streamlit.app/)
+![alt text](pictures/app.png)
 
 Enjoy using the Traffic sign Detection App!
