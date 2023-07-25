@@ -20,7 +20,6 @@ ultralytics>=8.0.111
 torch==1.12.1
 
 torch-geometric==2.1.0
-
 -f https://data.pyg.org/whl/torch-1.13.0+cpu.html
 torch-scatter
 -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
