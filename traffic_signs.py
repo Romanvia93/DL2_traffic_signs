@@ -121,4 +121,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
+    # streamlit run
 # https://dl2trafficsigns-yggakjlmx2.streamlit.app/
