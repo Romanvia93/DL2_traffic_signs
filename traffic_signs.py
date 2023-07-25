@@ -18,7 +18,7 @@ def text_block():
     st.markdown("- Speed Limit Sign")
     st.markdown("- Crosswalk Sign")
 
-@st.cache_data(show_spinner=False)
+# @st.cache_data(show_spinner=False)
 def load_local_image(image_path):
     """
     Load an image from the local file system.
