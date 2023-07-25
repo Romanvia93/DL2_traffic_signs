@@ -14,12 +14,16 @@ scipy>=1.4.1
 thop>=0.1.1  # FLOPs computation
 torch>=1.7.0  # see https://pytorch.org/get-started/locally (recommended)
 # torchvision>=0.8.1
-torchvision 
+# torchvision 
 tqdm>=4.64.0
 ultralytics>=8.0.111
 torch==1.12.1
 
 torch-geometric==2.1.0
+streamlit==0.89.0
+torch==1.9.0
+torchvision==0.10.0
+Pillow==8.3.2
 
 -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
 torch-scatter==2.0.9
