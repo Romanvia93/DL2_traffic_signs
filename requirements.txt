@@ -19,15 +19,12 @@ tqdm>=4.64.0
 ultralytics>=8.0.111
 torch==1.12.1
 
--f https://data.pyg.org/whl/torch-1.13.0+cpu.html
-torch-scatter
-
 torch-geometric==2.1.0
 
-# -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
-# torch-scatter==2.0.9
-# -f https://data.pyg.org/whl/torch-1.12.1+cpu.html
-# torch-sparse==0.6.16
+-f https://data.pyg.org/whl/torch-1.13.0+cpu.html
+torch-scatter
+-f https://data.pyg.org/whl/torch-1.12.1+cpu.html
+torch-sparse==0.6.16
 # protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
 
 # Logging ---------------------------------------------------------------------
