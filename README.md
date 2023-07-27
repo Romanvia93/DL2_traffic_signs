@@ -2,8 +2,6 @@
 
 This web application allows users to upload an image containing road signs and use YOLOv5 model for object detection. The app classifies the image and displays the detected objects along with their respective labels.
 
-# Road Sign Detection App
-
 This Streamlit app detects 4 distinct classes of road signs:
 - Traffic Light
 - Stop Sign
