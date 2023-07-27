@@ -16,7 +16,6 @@ This Streamlit app detects 4 distinct classes of road signs:
 
 3. The original image along with the detected objects and their labels will be displayed below.
 
-Here's how the app works:
 
 ## Installation
 1. Clone the repository:
