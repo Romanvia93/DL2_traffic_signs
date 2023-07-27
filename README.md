@@ -61,4 +61,4 @@ The app will be accessible in your browser at `http://localhost:8501`.
 
 ![alt text](pictures/app.png)
 
-Enjoy using the Traffic sign Detection App!
+### Enjoy using the Traffic sign Detection App!
